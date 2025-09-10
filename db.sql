@@ -11,12 +11,12 @@ class_name VARCHAR(255) NOT NULL,
 seating_capacity INT NOT NULL
 );
 
--- Creating journey_carriage table
+-- Creating journey_table
 CREATE TABLE journey (
 id INT PRIMARY KEY,
 journey_date DATE NOT NULL
 );
-
+-- Creating journey_carriage table to link journeys with carriage classes   
 CREATE TABLE journey_carriage (
     journey_id INT NOT NULL,           
     carriage_class_id INT NOT NULL,    
