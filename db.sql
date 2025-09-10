@@ -64,3 +64,10 @@ CREATE TABLE journey_carriage (
     FOREIGN KEY (journey_id) REFERENCES train_journey(id),
     FOREIGN KEY (carriage_class_id) REFERENCES carriage_class(id)
 );
+
+-- Create the carriage_class table 
+CREATE TABLE carriage_class (
+    id INT PRIMARY KEY,
+    class_name VARCHAR(50),
+    seating_capacity INT
+);
