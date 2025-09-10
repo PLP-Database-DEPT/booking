@@ -92,3 +92,9 @@ CREATE TABLE train_journey (
     name VARCHAR(100),
     FOREIGN KEY (schedule_id) REFERENCES schedule(id)
 );
+
+-- Create the train_station table 
+CREATE TABLE station (
+    id INT PRIMARY KEY,
+    station_name VARCHAR(100)
+);
