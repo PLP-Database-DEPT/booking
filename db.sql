@@ -84,3 +84,11 @@ CREATE TABLE journey_station (
     FOREIGN KEY (journey_id) REFERENCES train_journey(id),
     FOREIGN KEY (station_id) REFERENCES station(id)
 );
+
+-- Create the train_journey table 
+CREATE TABLE train_journey (
+    id INT PRIMARY KEY,
+    schedule_id INT,
+    name VARCHAR(100),
+    FOREIGN KEY (schedule_id) REFERENCES schedule(id)
+);
