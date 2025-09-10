@@ -18,3 +18,25 @@ CREATE TABLE booking_status (
     id INT PRIMARY KEY,
     name VARCHAR(50)
 );
+
+-- Create the booking table
+CREATE TABLE booking (
+    id INT PRIMARY KEY,
+    passenger_id INT,
+    position INT,
+    status_id INT,
+    booking_date DATE,
+    starting_station_id INT,
+    ending_station_id INT,
+    train_journey_id INT,
+    ticket_class_id INT,
+    amount_paid DECIMAL(10, 2),
+    ticket_no INT,
+    seat_no INT,
+    FOREIGN KEY (passenger_id) REFERENCES passenger(id),
+    FOREIGN KEY (status_id) REFERENCES booking_status(id)
+    FOREIGN KEY (starting_station_id) REFERENCES station(id),
+    FOREIGN KEY (ending_station_id) REFERENCES station(id),
+    FOREIGN KEY (train_journey_id) REFERENCES train_journey(id),
+    FOREIGN KEY (ticket_class_id) REFERENCES ticket_class(id)
+);
