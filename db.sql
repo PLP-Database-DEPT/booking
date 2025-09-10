@@ -71,3 +71,9 @@ CREATE TABLE carriage_class (
     class_name VARCHAR(50),
     seating_capacity INT
 );
+
+-- Create the schedule table 
+CREATE TABLE schedule (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
