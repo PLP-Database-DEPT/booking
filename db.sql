@@ -51,11 +51,7 @@ CREATE TABLE carriage_price (
     FOREIGN KEY (carriage_class_id) REFERENCES carriage_class(id)
 );
 
--- Create the journey_carriage table with the following columns:
--- journey_id (int) – Foreign Key
--- carriage_class_id (int) – Foreign Key
--- position (int)
--- Set appropriate foreign key relationships for journey_id and carriage_class_id.
+-- Create the journey_carriage table 
 CREATE TABLE journey_carriage (
     journey_id INT,
     carriage_class_id INT,
@@ -76,4 +72,15 @@ CREATE TABLE carriage_class (
 CREATE TABLE schedule (
     id INT PRIMARY KEY,
     name VARCHAR(100)
+);
+
+-- Create the journey_station table
+CREATE TABLE journey_station (
+    journey_id INT,
+    station_id INT,
+    stop_order INT,
+    departure_time DATETIME,
+    PRIMARY KEY (journey_id, station_id),
+    FOREIGN KEY (journey_id) REFERENCES train_journey(id),
+    FOREIGN KEY (station_id) REFERENCES station(id)
 );
