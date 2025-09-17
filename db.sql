@@ -4,6 +4,13 @@ CREATE DATABASE trainbookingDB;
 -- Use the database
 USE trainbookingDB;
 
+CREATE TABLE train_journey (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    schedule_id INT,
+    name VARCHAR(255),
+    FOREIGN KEY (schedule_id) REFERENCES schedule(id)
+);
+
 CREATE TABLE train_station(
   id INT AUTO_INCREMENT PRIMARY KEY,
   station_name VARCHAR(255) NOT NULL
