@@ -11,6 +11,10 @@ class_name VARCHAR(255) NOT NULL,
 seating_capacity INT NOT NULL
 );
 
+CREATE TABLE booking_status (
+    id INT PRIMARY KEY,          
+    name VARCHAR(50) NOT NULL    
+);
 
 CREATE TABLE journey (
 id INT PRIMARY KEY,
@@ -59,5 +63,4 @@ CREATE TABLE passenger (
     email_address VARCHAR(100),
     password VARCHAR(100)
 );
-
 
